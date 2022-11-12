@@ -1,0 +1,93 @@
+.footer__section {
+	margin-top: 96px;
+
+	background-color: #1b262f;
+	background-image: url("../../images/simple-circle.svg");
+	background-repeat: no-repeat;
+	background-position: calc(50% + 659px) calc(50% + 212px);
+
+	.footer {
+		@extend %displays;
+
+		padding: 31px 0px;
+
+		&__nav {
+			@include display(flex, none, center, 64px);
+		}
+
+		&__list {
+			@extend %displays;
+			justify-content: none;
+			gap: 40px;
+
+			@extend %lists;
+		}
+
+		&__link {
+			@include texts("PublicSans-Bold", normal, 15px, 18px, #fbfcfe);
+			@extend %links;
+
+			transition: all 0.3s ease;
+
+			mix-blend-mode: normal;
+			opacity: 0.7;
+
+			&:hover {
+				opacity: 1;
+				cursor: pointer;
+			}
+
+			&:active {
+				opacity: 0.5;
+			}
+		}
+	}
+
+	.icon {
+		@include display(flex, none, center, 24px);
+
+		cursor: pointer;
+
+		&__svg {
+			path:hover {
+				fill: #da6d97;
+
+				transition: all 0.3s ease;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.footer__section {
+		background-position: calc(50% + 343px) calc(50% + 212px);
+	}
+}
+
+@media only screen and (max-width: 650px) {
+	.footer__section {
+		background-position: calc(50% + 13px) calc(50% + 342px);
+		.footer {
+			flex-direction: column;
+			gap: 40px;
+		}
+	}
+}
+
+@media only screen and (max-width: 460px) {
+	.footer__section {
+		background-position: calc(50% + 6px) calc(50% + 384px);
+		.footer {
+			padding: 41px 0px 51px;
+			&__nav {
+				flex-direction: column;
+				gap: 40px;
+			}
+               
+			&__list {
+				flex-direction: column;
+				gap: 31px;
+			}
+		}
+	}
+}

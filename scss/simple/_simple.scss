@@ -1,0 +1,135 @@
+.simple__section {
+	background-image: url("../../images/simple-circle.svg");
+	background-repeat: no-repeat;
+	background-position: calc(50% + 720px) calc(50% - 145px);
+
+	.simple {
+		padding-top: 170px;
+
+		@extend %displays;
+
+		&__left {
+			max-width: 445px;
+			width: 100%;
+
+			@include display(flex, none, flex-start, 24px);
+			flex-direction: column;
+		}
+
+		&__title {
+			@include texts(
+				"DMSerifDisplay-Regular",
+				normal,
+				48px,
+				56px,
+				$text-fist
+			);
+			font-weight: 400;
+
+			letter-spacing: -0.369231px;
+		}
+
+		&__description {
+			@include texts("PublicSans-Regular", normal, 15px, 28px, #6c8294);
+		}
+	}
+
+	.costumer {
+		margin-top: 140px;
+		margin-bottom: 96px;
+
+		@include display(flex, space-between, flex-start, 10px);
+
+		.card {
+			max-width: 350px;
+			width: 100%;
+
+			@include display(flex, none, center, 32px);
+			flex-direction: column;
+
+			&__content {
+				@include display(flex, none, center, 16px);
+				flex-direction: column;
+			}
+
+			&__title {
+				@include texts("PublicSans-Bold", normal, 18px, 25px, $text-fist);
+
+				text-align: center;
+				letter-spacing: -0.138462px;
+			}
+
+			&__description {
+				@include texts("PublicSans-Regular", normal, 15px, 25px, #6c8294);
+
+				text-align: center;
+				letter-spacing: -0.138462px;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 900px) {
+	.simple__section {
+		background-image: none;
+
+		.simple {
+			padding-top: 0;
+			margin-top: 100px;
+
+			flex-direction: column-reverse;
+			align-items: center;
+
+			&__left {
+				max-width: 573px;
+				width: 100%;
+
+				align-items: center;
+			}
+
+			&__description {
+				text-align: center;
+			}
+
+			&__img {
+				max-width: 363px;
+				width: 100%;
+				height: 320px;
+
+				margin: 0 auto;
+			}
+		}
+	}
+}
+@media only screen and (max-width: 650px) {
+	.simple__section {
+		.costumer {
+			max-width: 328px;
+			width: 100%;
+
+			margin: 80px auto;
+
+			flex-direction: column;
+			align-items: center;
+			gap: 48px;
+		}
+	}
+}
+
+@media only screen and (max-width: 460px) {
+	.simple__section {
+		.simple {
+			margin-top: 80px;
+
+			&__title {
+				@include texts(
+					"DMSerifDisplay-Regular",
+					normal,
+					36px,
+					36px,
+					$text-fist
+				);
+			}
+		}
+	}
+}

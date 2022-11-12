@@ -1,0 +1,43 @@
+// normalize css
+
+@import "./normalize/normalize";
+
+// fonts
+
+@import "./fontsscss/fonts";
+
+// globals
+
+@import "./globals/glabals";
+
+// variables
+
+@import "./variables/variables";
+
+// header styles
+
+@import "./header/header";
+
+// hero styles
+
+@import "./hero/hero";
+
+// wokrwith section
+
+@import "./workwith/workwith";
+
+// implement section
+
+@import "./implement/implement";
+
+// simple section styles
+
+@import "./simple/simple";
+
+// ready section
+
+@import "./ready/ready";
+
+// footer styles
+
+@import  "./footer/footer";

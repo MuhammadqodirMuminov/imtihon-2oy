@@ -1,0 +1,39 @@
+// variables
+
+$fist-bg: #fbfcfe;
+$text-fist: #36536b;
+$text-secondary:#fbfcfe;
+
+//templates
+
+%lists {
+	list-style: none;
+}
+
+%links {
+	text-decoration: none;
+}
+
+%displays {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+// mixins
+
+@mixin texts($font, $style, $size, $height, $color) {
+	font-family: $font;
+	font-style: $style;
+	font-size: $size;
+	line-height: $height;
+
+	color: $color;
+}
+
+@mixin display($flex, $content, $align, $gap) {
+	display: $flex;
+	justify-content: $content;
+	align-items: $align;
+	gap: $gap;
+}

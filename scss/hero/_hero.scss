@@ -1,0 +1,152 @@
+.hero {
+	width: 100%;
+	margin-top: 20px;
+
+	@extend %displays;
+
+	&__block {
+		@include display(flex, none, flex-start, 16px);
+		flex-direction: column;
+	}
+
+	&__title {
+		max-width: 536px;
+		width: 100%;
+
+		margin: 0px;
+		margin-bottom: 21px;
+
+		@include texts("DMSerifDisplay-Regular", normal, 72px, 72px, $text-fist);
+		font-weight: 400;
+
+		letter-spacing: -0.553846px;
+	}
+
+	.form {
+		position: relative;
+
+		max-width: 465px;
+		width: 100%;
+
+		display: flex;
+		align-items: center;
+
+		&__input {
+			width: 100%;
+
+			padding: 16px 0px 14px 27px;
+
+			@include texts("PublicSans-Bold", normal, 15px, 18px, $text-fist);
+
+			border: none;
+			mix-blend-mode: normal;
+			opacity: 0.6;
+
+			background: $fist-bg;
+			box-shadow: 10px 10px 25px -10px rgba(54, 83, 107, 0.25);
+			border-radius: 24px;
+
+			&:hover {
+				opacity: 0.9;
+			}
+		}
+
+		&__btn {
+			position: absolute;
+			right: 0;
+			padding: 16px 24px 14px 26px;
+
+			@include texts("PublicSans-Bold", normal, 15px, 18px, $text-secondary);
+
+			background: #ba4270;
+			border-radius: 24px;
+
+			letter-spacing: -0.115385px;
+			border: none;
+
+			transition: all 0.5s ease;
+
+			&:hover {
+				background: #da6d97;
+			}
+
+			&:active {
+				color: #fbfcfe52;
+			}
+		}
+	}
+
+	&__description {
+		padding-left: 27px;
+		@include texts("PublicSans-Regular", normal, 15px, 18px, #6c8294);
+	}
+
+	&__span {
+		font-weight: 800;
+	}
+
+	&__bg {
+		position: absolute;
+		top: 0;
+		right: 0;
+		z-index: -1;
+	}
+
+	&__bg > img {
+		width: 100%;
+		height: 100%;
+	}
+}
+
+@media only screen and (max-width: 900px) {
+	.hero {
+		margin-top: 40px;
+		flex-direction: column-reverse;
+		gap: 48px;
+
+		&__block {
+			align-items: center;
+		}
+
+		&__title {
+			max-width: 100%;
+			width: 100%;
+
+			@include texts("DMSerifDisplay-Regular", normal, 48px, 56px, $text-fist);
+			text-align: center;
+		}
+	}
+}
+
+@media only screen and (max-width: 900px) {
+	.hero {
+		.hero__bg {
+			display: none;
+		}
+	}
+}
+
+@media only screen and (max-width: 460px) {
+	.hero {
+		&__title {
+			@include texts("DMSerifDisplay-Regular", normal, 32px, 36px, $text-fist);
+		}
+
+		&__block {
+			gap: 24px;
+               
+			.form {
+				position: static;
+
+				display: flex;
+				flex-direction: column;
+				gap: 18px;
+
+				&__btn {
+					width: 100%;
+					position: static;
+				}
+			}
+		}
+	}
+}
